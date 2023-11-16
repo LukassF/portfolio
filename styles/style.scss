@@ -1,0 +1,23 @@
+@use "./utils" as *;
+@use "./header";
+@use "./section1";
+@use "./skills";
+@use "./projects";
+
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background-color: rgb(25, 23, 28);
+  position: relative;
+  font-family: "Nunito", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.all {
+  overflow: hidden;
+}

@@ -1,0 +1,8 @@
+@mixin flex($dir, $jus, $ali) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+$main_accent: rgb(121, 148, 179);

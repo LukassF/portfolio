@@ -1,0 +1,107 @@
+@use "./utils" as *;
+
+#skills {
+  min-height: 100vh;
+  background-color: #2f2d32;
+  position: relative;
+  @include flex(row, flex-start, center);
+
+  // #image-cont {
+  //   position: absolute;
+  //   right: 10%;
+  //   top: 50%;
+  //   transform: translateY(-50%) rotate(-15deg);
+  //   width: 30%;
+  //   aspect-ratio: 1/1;
+  //   background-color: #3d3a42;
+
+  //   div {
+  //     width: 50%;
+  //     aspect-ratio: 1/1;
+  //     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfnoPeObgLvozpDuAz7VnYxKnszgspsljl1Jb2IIFE2n7_z4hmmewbudw5E_g_NvdAfYk&usqp=CAU");
+  //     background-size: cover;
+  //     position: absolute;
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translate(-50%, -50%) rotate(8deg);
+  //   }
+  // }
+
+  .skills__s1 {
+    position: relative;
+    z-index: 20;
+    padding: 30px;
+    // background-color: red;
+    // display: grid;
+    // gap: 20px;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: 3fr 1fr;
+    width: 100%;
+
+    h2 {
+      font-size: 1.6em;
+      color: rgb(140, 139, 139);
+      font-weight: 300;
+      margin-bottom: 50px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 3fr 1fr;
+      width: 100%;
+      .trait {
+        padding: 10px 20px;
+        min-height: 250px;
+        @include flex(column, center, center);
+        gap: 10px;
+        h1 {
+          color: white;
+        }
+        span {
+          width: 10%;
+          height: 3px;
+          border-radius: 500px;
+          background-color: rgb(155, 153, 153);
+        }
+
+        p {
+          color: rgb(178, 177, 177);
+          font-size: 0.9em;
+          text-align: center;
+          padding: 0px 30px;
+        }
+        border: solid rgba(121, 148, 179, 0.3) 1.5px;
+        background-color: rgba(121, 148, 179, 0.1);
+      }
+
+      article {
+        border-top: solid rgb(96, 96, 95) 2px;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        @include flex(row, flex-start, center);
+
+        ul {
+          @include flex(row, center, center);
+          list-style: none;
+          gap: 40px;
+          padding-left: 20px;
+
+          li {
+            width: 50px;
+            display: grid;
+            place-content: center;
+            aspect-ratio: 1/1;
+            // background-color: #29272b;
+
+            // border-bottom: solid rgb(95, 94, 94) 2px;
+            // border-right: solid rgb(95, 94, 94) 2px;
+            font-size: 1.5em;
+            color: rgb(159, 159, 159);
+          }
+        }
+      }
+    }
+  }
+}

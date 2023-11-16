@@ -1,0 +1,282 @@
+#header {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+@media screen and (max-width: 650px) {
+  #header {
+    display: none;
+  }
+}
+#header canvas {
+  background-color: transparent;
+}
+#header #greetings {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  color: rgb(255, 255, 255);
+  transform: translate(-50%, -50%);
+  cursor: default;
+}
+@media screen and (max-width: 830px) {
+  #header #greetings {
+    left: 50%;
+  }
+}
+#header #greetings h1 {
+  margin: 0;
+  font-size: 3em;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+}
+#header #greetings p {
+  font-size: 1.1em;
+  color: rgba(233, 233, 233, 0.6);
+}
+
+#about {
+  width: 100%;
+  overflow: hidden;
+  background-color: #2f2d32;
+  position: relative;
+}
+#about #navbar {
+  padding: 15px 40px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+#about #navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  color: white;
+  gap: 40px;
+  font-size: 1.2em;
+}
+@media screen and (max-width: 800px) {
+  #about #navbar ul {
+    font-size: 1em;
+    gap: 30px;
+  }
+}
+#about #navbar ul li {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#about #navbar ul li span {
+  transition: all 0.2s;
+}
+#about #navbar ul li:hover {
+  transform: skew(-6deg);
+}
+#about #navbar ul li:hover span {
+  color: rgb(121, 148, 179);
+  font-size: 0.9em;
+}
+#about #section-1-sub {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+}
+#about #section-1-sub .s1__article1 {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#about #section-1-sub .s1__article1 #image-cont {
+  width: 90%;
+  background-color: rgba(95, 95, 95, 0.2);
+  transform: rotate(20deg);
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+#about #section-1-sub .s1__article1 #image-cont img {
+  height: 110%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: opacity(50%) grayscale(50%);
+  transform: rotate(-20deg);
+}
+#about #section-1-sub .s1__article2 {
+  position: relative;
+  z-index: 20;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+#about #section-1-sub .s1__article2 h3 {
+  color: rgb(151, 151, 151);
+  font-size: 1.3em;
+  text-align: end;
+}
+#about #section-1-sub .s1__article2 h1 {
+  color: rgb(199, 195, 195);
+  font-size: 2.2em;
+  font-weight: 700;
+  text-align: end;
+}
+@media screen and (max-width: 1000px) {
+  #about #section-1-sub .s1__article2 h1 {
+    font-size: 2em;
+  }
+}
+#about #section-1-sub .s1__article2 h1 span {
+  color: rgb(121, 148, 179);
+}
+#about #section-1-sub .s1__article2 div {
+  margin: 30px 0px;
+  width: 80%;
+  height: 2px;
+  border-radius: 500px;
+  background-color: rgb(121, 148, 179);
+}
+#about #section-1-sub .s1__article2 p {
+  color: rgb(151, 151, 151);
+  font-size: 1em;
+  text-align: end;
+}
+@media screen and (max-width: 1000px) {
+  #about #section-1-sub .s1__article2 p {
+    font-size: 0.9em;
+  }
+}
+#about #section-1-sub .s1__article2 ul {
+  margin: 30px;
+  margin-top: 70px !important;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+#about #section-1-sub .s1__article2 ul li {
+  width: 50px;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 1/1;
+  border-top: solid rgb(95, 94, 94) 1px;
+  font-size: 1.2em;
+  color: rgb(159, 159, 159);
+}
+
+#skills {
+  min-height: 100vh;
+  background-color: #2f2d32;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#skills .skills__s1 {
+  position: relative;
+  z-index: 20;
+  padding: 30px;
+  width: 100%;
+}
+#skills .skills__s1 h2 {
+  font-size: 1.6em;
+  color: rgb(140, 139, 139);
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+#skills .skills__s1 .grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 3fr 1fr;
+  width: 100%;
+}
+#skills .skills__s1 .grid .trait {
+  padding: 10px 20px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: solid rgba(121, 148, 179, 0.3) 1.5px;
+  background-color: rgba(121, 148, 179, 0.1);
+}
+#skills .skills__s1 .grid .trait h1 {
+  color: white;
+}
+#skills .skills__s1 .grid .trait span {
+  width: 10%;
+  height: 3px;
+  border-radius: 500px;
+  background-color: rgb(155, 153, 153);
+}
+#skills .skills__s1 .grid .trait p {
+  color: rgb(178, 177, 177);
+  font-size: 0.9em;
+  text-align: center;
+  padding: 0px 30px;
+}
+#skills .skills__s1 .grid article {
+  border-top: solid rgb(96, 96, 95) 2px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#skills .skills__s1 .grid article ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+  padding-left: 20px;
+}
+#skills .skills__s1 .grid article ul li {
+  width: 50px;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 1/1;
+  font-size: 1.5em;
+  color: rgb(159, 159, 159);
+}
+
+.projects {
+  min-height: 100vh;
+  background-color: #2f2d32;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background-color: rgb(25, 23, 28);
+  position: relative;
+  font-family: "Nunito", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.all {
+  overflow: hidden;
+}/*# sourceMappingURL=style.css.map */

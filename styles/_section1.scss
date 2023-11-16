@@ -1,0 +1,140 @@
+@use "./utils" as *;
+
+#about {
+  width: 100%;
+  overflow: hidden;
+  //   box-shadow: 0px 0px 10px 4px white;
+  //   border-top: solid white 1.22px;
+  background-color: #2f2d32;
+  position: relative;
+
+  #navbar {
+    // position: absolute;
+    // z-index: 100;
+    // right: 0;
+    padding: 15px 40px;
+    padding-top: 40px;
+    @include flex(row, flex-end, center);
+    ul {
+      @include flex(row, center, center);
+      list-style: none;
+      color: white;
+      gap: 40px;
+      font-size: 1.2em;
+
+      @media screen and (max-width: 800px) {
+        font-size: 1em;
+        gap: 30px;
+      }
+
+      li {
+        cursor: pointer;
+        transition: all 0.2s;
+        span {
+          transition: all 0.2s;
+        }
+        &:hover {
+          transform: skew(-6deg);
+
+          span {
+            color: $main-accent;
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+  }
+
+  #section-1-sub {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+
+    .s1__article1 {
+      position: relative;
+      z-index: 10;
+      @include flex(row, center, center);
+      #image-cont {
+        width: 90%;
+        background-color: rgba(95, 95, 95, 0.2);
+        transform: rotate(20deg);
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        position: relative;
+        display: grid;
+        place-content: center;
+
+        img {
+          height: 110%;
+          width: 100%;
+          object-fit: cover;
+          filter: opacity(50%) grayscale(50%);
+          transform: rotate(-20deg);
+        }
+      }
+    }
+    .s1__article2 {
+      position: relative;
+      z-index: 20;
+      padding: 50px;
+      @include flex(column, center, flex-end);
+      h3 {
+        color: rgb(151, 151, 151);
+        font-size: 1.3em;
+        text-align: end;
+      }
+      h1 {
+        color: rgb(199, 195, 195);
+        font-size: 2.2em;
+        font-weight: 700;
+        text-align: end;
+
+        @media screen and (max-width: 1000px) {
+          font-size: 2em;
+        }
+        span {
+          color: $main-accent;
+        }
+      }
+
+      div {
+        margin: 30px 0px;
+        width: 80%;
+        height: 2px;
+        border-radius: 500px;
+        background-color: $main-accent;
+      }
+
+      p {
+        color: rgb(151, 151, 151);
+        font-size: 1em;
+        text-align: end;
+
+        @media screen and (max-width: 1000px) {
+          font-size: 0.9em;
+        }
+      }
+
+      ul {
+        margin: 30px;
+        margin-top: 70px !important;
+        list-style: none;
+        @include flex(row, space-between, center);
+        gap: 40px;
+
+        li {
+          width: 50px;
+          display: grid;
+          place-content: center;
+          aspect-ratio: 1/1;
+          // background-color: #29272b;
+          border-top: solid rgb(95, 94, 94) 1px;
+          // // border-bottom: solid rgb(95, 94, 94) 2px;
+          // border-right: solid rgb(95, 94, 94) 2px;
+          font-size: 1.2em;
+          color: rgb(159, 159, 159);
+        }
+      }
+    }
+  }
+}
