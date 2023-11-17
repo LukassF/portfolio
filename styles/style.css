@@ -94,23 +94,32 @@
   justify-content: center;
   align-items: center;
 }
-#about #section-1-sub .s1__article1 #image-cont {
-  width: 90%;
+#about #section-1-sub .s1__article1 #image-cont-outer {
+  border: solid rgba(114, 110, 110, 0.5) 2px;
+  width: 80%;
+  aspect-ratio: 1/1;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transform: rotate(10deg);
+}
+#about #section-1-sub .s1__article1 #image-cont-outer #image-cont {
+  width: 100%;
+  transform: rotate(-10deg);
   background-color: rgba(95, 95, 95, 0.2);
-  transform: rotate(20deg);
   aspect-ratio: 1/1;
   overflow: hidden;
   position: relative;
   display: grid;
   place-content: center;
 }
-#about #section-1-sub .s1__article1 #image-cont img {
+#about #section-1-sub .s1__article1 #image-cont-outer #image-cont img {
   height: 110%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: opacity(50%) grayscale(50%);
-  transform: rotate(-20deg);
+  filter: opacity(70%) grayscale(50%);
+  transform: rotate(10deg);
 }
 #about #section-1-sub .s1__article2 {
   position: relative;
@@ -174,7 +183,33 @@
   aspect-ratio: 1/1;
   border-top: solid rgb(95, 94, 94) 1px;
   font-size: 1.2em;
+  transition: all 0.3s;
+  position: relative;
+}
+#about #section-1-sub .s1__article2 ul li a {
+  position: absolute;
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
   color: rgb(159, 159, 159);
+}
+#about #section-1-sub .s1__article2 ul li::after {
+  background-color: #3a373d;
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  content: "";
+  z-index: -1;
+  transition: all 0.3s;
+}
+#about #section-1-sub .s1__article2 ul li:hover {
+  border-color: transparent;
+  cursor: pointer;
+}
+#about #section-1-sub .s1__article2 ul li:hover::after {
+  height: 100%;
 }
 
 #skills {
@@ -214,7 +249,7 @@
   align-items: center;
   gap: 10px;
   border: solid rgba(121, 148, 179, 0.3) 1.5px;
-  background-color: rgba(121, 148, 179, 0.1);
+  background-color: rgba(121, 148, 179, 0.05);
 }
 #skills .skills__s1 .grid .trait h1 {
   color: white;
@@ -257,10 +292,315 @@
   font-size: 1.5em;
   color: rgb(159, 159, 159);
 }
+#skills .skills__s1 .grid article ul li img {
+  width: 22px;
+  filter: invert(100%) opacity(60%);
+}
 
 .projects {
   min-height: 100vh;
   background-color: #2f2d32;
+  padding: 30px;
+}
+.projects #break {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(95, 95, 95, 0.2);
+  position: relative;
+}
+.projects #break ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  gap: 30px;
+  overflow: hidden;
+}
+.projects #break ul li {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.projects #break ul li div {
+  color: white;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.projects #break ul li span {
+  color: rgb(179, 176, 176);
+  font-weight: 200;
+  font-size: 0.9em;
+  padding: 0px 30px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.projects #break ul li img {
+  position: absolute;
+  height: 90%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  filter: opacity(10%) invert(50%);
+  transition: all 0.3s;
+}
+.projects #break ul li:hover img {
+  height: 140%;
+}
+.projects #break ul li:hover div {
+  font-size: 1.3rem;
+}
+.projects #break ul li:hover span {
+  color: grey;
+}
+.projects .projects-content {
+  padding: 80px 0px;
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.projects .projects-content .project,
+.projects .projects-content .other {
+  aspect-ratio: 5/3;
+  overflow: hidden;
+  position: relative;
+  border: solid rgb(61, 60, 60) 1.5px;
+}
+.projects .projects-content .project .project-info,
+.projects .projects-content .other .project-info {
+  position: relative;
+  z-index: 30;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 20px;
+  background: linear-gradient(to bottom, rgb(47, 45, 50), transparent);
+}
+.projects .projects-content .project .project-info h1,
+.projects .projects-content .other .project-info h1 {
+  color: rgb(193, 190, 190);
+  font-weight: 800;
+  padding: 10px 0px;
+  font-size: 1.2em;
+  position: relative;
+  z-index: 30;
+}
+.projects .projects-content .project .project-info hr,
+.projects .projects-content .other .project-info hr {
+  position: relative;
+  width: 80%;
+  height: 1.5px;
+  background-color: rgb(121, 148, 179);
+  border-radius: 500px;
+  opacity: 0.4;
+}
+.projects .projects-content .project .project-info p,
+.projects .projects-content .other .project-info p {
+  transform: translate(-30px, -30px);
+  color: rgb(135, 132, 132);
+  font-weight: 100;
+  font-size: 0.8em;
+  padding-top: 20px;
+  transition: all 0.3s;
+  opacity: 0;
+}
+.projects .projects-content .project:hover .project-info p,
+.projects .projects-content .other:hover .project-info p {
+  transform: translate(0);
+  opacity: 1;
+}
+.projects .projects-content .project img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: grayscale(50%) opacity(30%) blur(0.5px);
+  transition: all 0.3s;
+}
+.projects .projects-content .project:hover img {
+  transform: translate(30px, 30px);
+  opacity: 0.3;
+}
+.projects .projects-content .other {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+}
+.projects .projects-content .other div:nth-child(1) {
+  padding: 20px 20px;
+  display: grid;
+  gap: 15px;
+  grid-template-rows: repeat(4, 1fr);
+}
+.projects .projects-content .other div:nth-child(1) a {
+  text-decoration: none;
+  background-color: rgba(108, 111, 114, 0.2);
+  border: solid #3e3c41 1px;
+  opacity: 0.6;
+  color: rgb(121, 148, 179);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 13px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.projects .projects-content .other div:nth-child(1) a:hover {
+  background-color: rgba(121, 148, 179, 0.5);
+  color: white;
+}
+.projects .projects-content .other div:nth-child(2) {
+  border-right: solid rgb(61, 60, 60) 1.5px;
+  position: relative;
+  overflow: hidden;
+}
+.projects .projects-content .other div:nth-child(2) article {
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  left: 0;
+  top: 0;
+  transition: all 0.3s;
+  padding: 20px;
+}
+.projects .projects-content .other div:nth-child(2) #ambient {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+}
+.projects .projects-content .other div:nth-child(2) #ambient img {
+  opacity: 0.5;
+  filter: invert(80%);
+  width: 70%;
+}
+.projects .projects-content .other div:nth-child(2) #ambient h3 {
+  color: rgb(121, 148, 179);
+  opacity: 0.7;
+  font-weight: 700;
+}
+.projects .projects-content .other div:nth-child(2) #ambient hr {
+  opacity: 0.4;
+  height: 1.5px;
+  border: none;
+  background-color: rgb(121, 148, 179);
+  border-radius: 500px;
+  width: 50%;
+}
+.projects .projects-content .other div:nth-child(2) #ambient p {
+  color: rgb(146, 145, 145);
+  font-size: 0.7em;
+  font-weight: 100;
+}
+.projects .projects-content .other div:nth-child(2) #ambient a {
+  text-decoration: none;
+  background-color: rgba(108, 111, 114, 0.2);
+  border: solid #3e3c41 1px;
+  opacity: 0.6;
+  color: rgb(121, 148, 179);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+  padding: 8px 13px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.projects .projects-content .other div:nth-child(2) #ambient a:hover {
+  background-color: rgba(121, 148, 179, 0.5);
+  color: white;
+}
+.projects .projects-content .other div:nth-child(2) #ecommerce,
+.projects .projects-content .other div:nth-child(2) #textem,
+.projects .projects-content .other div:nth-child(2) #musicapp,
+.projects .projects-content .other div:nth-child(2) #awkward {
+  transform: translateX(20%);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+}
+.projects .projects-content .other div:nth-child(2) #ecommerce h3,
+.projects .projects-content .other div:nth-child(2) #textem h3,
+.projects .projects-content .other div:nth-child(2) #musicapp h3,
+.projects .projects-content .other div:nth-child(2) #awkward h3 {
+  color: rgb(121, 148, 179);
+  opacity: 0.7;
+  font-weight: 700;
+}
+.projects .projects-content .other div:nth-child(2) #ecommerce hr,
+.projects .projects-content .other div:nth-child(2) #textem hr,
+.projects .projects-content .other div:nth-child(2) #musicapp hr,
+.projects .projects-content .other div:nth-child(2) #awkward hr {
+  opacity: 0.4;
+  height: 1.5px;
+  border: none;
+  background-color: rgb(121, 148, 179);
+  border-radius: 500px;
+  width: 50%;
+}
+.projects .projects-content .other div:nth-child(2) #ecommerce p,
+.projects .projects-content .other div:nth-child(2) #textem p,
+.projects .projects-content .other div:nth-child(2) #musicapp p,
+.projects .projects-content .other div:nth-child(2) #awkward p {
+  color: rgb(146, 145, 145);
+  font-size: 0.7em;
+  padding: 10px 0px;
+  font-weight: 100;
+}
+.projects .projects-content .other div:nth-child(2) #ecommerce ul,
+.projects .projects-content .other div:nth-child(2) #textem ul,
+.projects .projects-content .other div:nth-child(2) #musicapp ul,
+.projects .projects-content .other div:nth-child(2) #awkward ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+.projects .projects-content .other div:nth-child(2) #ecommerce ul li,
+.projects .projects-content .other div:nth-child(2) #textem ul li,
+.projects .projects-content .other div:nth-child(2) #musicapp ul li,
+.projects .projects-content .other div:nth-child(2) #awkward ul li {
+  opacity: 0.5;
+}
+.projects .projects-content .other div:nth-child(2) #ecommerce ul li i,
+.projects .projects-content .other div:nth-child(2) #textem ul li i,
+.projects .projects-content .other div:nth-child(2) #musicapp ul li i,
+.projects .projects-content .other div:nth-child(2) #awkward ul li i {
+  color: white;
+  font-size: 1.2em;
+}
+.projects .projects-content .other div:nth-child(2) #ecommerce ul li img,
+.projects .projects-content .other div:nth-child(2) #textem ul li img,
+.projects .projects-content .other div:nth-child(2) #musicapp ul li img,
+.projects .projects-content .other div:nth-child(2) #awkward ul li img {
+  width: 19px;
+  filter: invert(80%);
+}
+
+.contact {
+  min-height: 100vh;
+  background-color: #2f2d32;
+  padding: 30px;
 }
 
 * {

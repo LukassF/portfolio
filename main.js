@@ -151,3 +151,16 @@ gsap.from(".greetings-el", {
   stagger: 0.2,
   opacity: 0,
 });
+
+// ---------------------- Functions ------------------------------------
+
+let infoParent = document.getElementById("info-parent");
+let children = infoParent.children;
+function currentProject(type) {
+  for (let child of children) {
+    child.style.transform = "translateX(20%)";
+    child.style.opacity = 0;
+  }
+  document.getElementById(type).style.transform = "none";
+  document.getElementById(type).style.opacity = "1";
+}

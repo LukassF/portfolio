@@ -43,8 +43,10 @@
         </nav>
         <section id="section-1-sub">
           <article class="s1__article1">
-            <div id="image-cont">
-              <img src="./assets/lukasz_tr.png" alt="" />
+            <div id="image-cont-outer">
+              <div id="image-cont">
+                <img src="./assets/lukasz_tr.png" alt="" />
+              </div>
             </div>
           </article>
           <article class="s1__article2">
@@ -59,21 +61,41 @@
               adipisicing elit
             </p>
             <ul>
-              <li><i class="fa fa-facebook"></i></li>
-              <li><i class="fa fa-instagram"></i></li>
-              <li><i class="fa fa-linkedin"></i></li>
-              <li><i class="fa fa-github"></i></li>
-              <li><i class="fa fa-envelope"></i></li>
+              <li>
+                <a href="https://www.facebook.com/luki.flork" target="_blank"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/luki.flork?igshid=ZGUzMzM3NWJiOQ=="
+                  target="_blank"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/%C5%82ukasz-florek-37784b279/"
+                  target="_blank"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://github.com/LukassF" target="_blank"
+                  ><i class="fa fa-github"></i
+                ></a>
+              </li>
+              <li>
+                <a href="mailto:szkulkerolf@gmail.com"
+                  ><i class="fa fa-envelope"></i
+                ></a>
+              </li>
             </ul>
           </article>
         </section>
       </main>
 
       <main id="skills">
-        <!-- <div id="image-cont">
-          <div></div>
-        </div> -->
-
         <section class="skills__s1">
           <article class="grid">
             <div class="trait trait-1">
@@ -113,7 +135,12 @@
                 <li><i class="fab fa-react"></i></li>
                 <li><i class="fab fa-angular"></i></li>
                 <li><i class="fab fa-node"></i></li>
-                <li><i class="fab fa-angular"></i></li>
+                <li>
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEUAAAD///9ra2uMjIwdHR10dHR9fX1gYGDLy8tvb29ERETq6ur5+fnx8fFXV1ecnJylpaW5ubk9PT3U1NSUlJSysrLb29vn5+c2NjZnZ2eGhoYTExO8vLzOzs4YGBhOTk4rKyskJCSrq6uYmJgvLy9ISEg4ODjjvoUeAAAFCUlEQVR4nO2caUPiMBCGw1VEWooolyCX6P//iQvL6gLO5GhmUth9n680bR7S5pzEGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwfzObZ69HsuZgtFB/2n4w6J6Y9zpWekeaB+ZHut8Mztm4ntcbTxsX5NNlttU0HDdEebU+LHtmkk3f2/+AYXuX21IuP5UMl7KGLfZBO2faB52XNZFhz1p+X7xoGD7IGjJ59P0fnxUM3xIYbvve6YvZrRu+E48YBd1hLW3I1d8VKWMFG43BvRlug+8xkjUUrmmGPx7g/w1+kcv25LQNnyrcZHLLhrur23cr3WV8R4ZFtds078bwtep97sYwvJr5w9OdGM6r3qYQbPeFDce+N8+nkwnbGxcsQfEW/zJv3FVvvVOTt5hTXfK8JyloVm0e80Jlr7OwJLlorDu0X//j/KLh9c8Pon4OWlQG/WtyurW/HiENrv5AWQUHkYZTKnnx47LZ2feYtABNtCFZkxDJ/44+0hagiTVs+xXhgez021Iu577EGe6p1HSX89isFF2xfPsTZ0gOfZmpqoIYd6UgzvCRSs18aZtHqTyHoWCYaeY3HIW3VGVKtDoKNU3qBs9BnOGWSi058hMgznBBGtZTZ3Jo9GkaNdWaNJGG9Ag/V8xwMJGGzAA4/3AnTUWkYUkbknP/NRFpOOMMG0XyQQRDpCE9QDzRvw3HWENyFuTbkV8RT0esITsVdSIv9aNpHEQbOiM9lsJLaaFEGzoK8chEdu4wkHhDtsE4o84PMt7Qb+Uir21MJWBIDoMJx5rKUcDQ3mLU7ihh6B91VdRQ54gYBiz+TJK3HTKGIVFJoiv4HggZhoQHSq6NeiBl+HMJzULSaQ4xw6D1bo0ARQ45Q7MI+BiLdB1yQUPfINqTompo+zmihiFfo3BoG4+woWl7R7lN5SSsSBsas/d1TLRaKm9ozNZz/0OaRSoNQ2NWpVedIyHgRMfwwKtlFu6LJB04NcNDF8DdPqZoMhQNjfl09VZTFKKq4XEnlNUwxRKOsqFxzFQlGBHrG1qnVBO0iSkMzZaNQk3wmiYxNKbJKeovFycyNHumC2DfkSpBKkPTphX124tkhsyLqj/aT2dITzn2VR51TkJDuhBVHnWOlOHWnWZ114aHjsvGeRFZ14RnORARw85xd5d7wx25B6xatgOQWF2bnFI553nv1XDpnYx61O0bvp+nsy9IDKhH3bph92qF26pIDjH05xRjDEc/23DLdgM6QOym+zTkvCgf6UUHNFzvuZWnsmHGDBa4LDNTb/qxb1UNyXS/mVInJsy5+VP92bbKZcgaHr6t64KZT9i/Q8PpksqG9j3cby/r06FJi1E2tuxnT7AaXL2mYcvli7w44Lhmr+0XY0juzAvkTVvPRLUWlc8a+Iv0MS4UMS1+9Db4JAELUb22ikdifJPgK4w05CP1vaDOY5Inruf9ESMoe0YNS+ToiR4ReUFuiFYgdnz46R9Cc0m+UXO6JHqMv/JYzaYE5U9tYxCYp6ly8mT/vqK+usFvqujZLQ5k5ktDQi8Pb6jOnDqD0IzwNuBIs8RBwmLrFr6BUMuNtIIDyZWZlrNazYd6R+1ykHslKkdIjIYWyeKpjoM/zGNGENVWdXbE+VfFQ0vrEOF6mK2bL2U53O2GZVm2mutV3RkCAAAAAAAAAABAen4BuoQ+JH/rlgIAAAAASUVORK5CYII="
+                    alt="ts"
+                  />
+                </li>
                 <li><i class="fab fa-python"></i></li>
               </ul>
             </article>
@@ -122,9 +149,256 @@
       </main>
 
       <main class="projects">
-        <section></section>
+        <section id="break">
+          <ul>
+            <li>
+              <div>A lot of experience</div>
+              <span
+                >Almost a year of experience in creating highly functional and
+                visually appealing apps.</span
+              >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3504/3504016.png"
+                alt="experience icon"
+              />
+            </li>
+            <li>
+              <div>A large repository</div>
+              <span
+                >Around 20 complicated, diverse and versitile projects, of many
+                types!</span
+              >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Noun_Project_Community_icon_986471.svg/2048px-Noun_Project_Community_icon_986471.svg.png"
+                alt="projects icon"
+              />
+            </li>
+            <li>
+              <div>Diverse techstack</div>
+              <span
+                >I have experience with many frontend and backend technologies
+                and frameworks.</span
+              >
+              <img
+                src="https://static.thenounproject.com/png/4344306-200.png"
+                alt="techstack icon"
+              />
+            </li>
+          </ul>
+        </section>
+
+        <section class="projects-content">
+          <div class="project">
+            <img
+              src="https://www.pngkey.com/png/full/249-2492376_selecting-the-right-partner-to-build-your-website.png"
+              alt="spotify"
+            />
+            <div class="project-info">
+              <h1>VARIOUS STATIC WEBSITES AND CLONES</h1>
+              <hr />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                optio rerum veniam deleniti quod qui inventore minima dolorem
+                sit atque consectetur, saepe facilis expedita explicabo ea iusto
+                assumenda autem reiciendis. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Obcaecati impedit repellendus
+                consequatur explicabo hic quam, facilis tempora blanditiis velit
+                voluptate laboriosam. Deserunt inventore commodi repellat quia
+                quae soluta rem perspiciatis!
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <img
+              src="https://res.cloudinary.com/smartsupp/image/upload/w_1024,q_auto,f_auto,dpr_auto/v1652860147/upload/Genuinely_connect_with_visitors_and_boost_online_sales_2x_hqpve6.png"
+              alt="spotify"
+            />
+            <div class="project-info">
+              <h1>DYNAMIC AND FUNCTIONAL FULLSTACK APPS</h1>
+              <hr />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                optio rerum veniam deleniti quod qui inventore minima dolorem
+                sit atque consectetur, saepe facilis expedita explicabo ea iusto
+                assumenda autem reiciendis. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Obcaecati impedit repellendus
+                consequatur explicabo hic quam, facilis tempora blanditiis velit
+                voluptate laboriosam. Deserunt inventore commodi repellat quia
+                quae soluta rem perspiciatis!
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <img
+              src="https://www.pngmart.com/files/11/Online-Portal-E-Commerce-PNG-Image.png"
+              alt="spotify"
+            />
+            <div class="project-info">
+              <h1>ECOMMERCE AND SUPPORTING PAYMENTS</h1>
+              <hr />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                optio rerum veniam deleniti quod qui inventore minima dolorem
+                sit atque consectetur, saepe facilis expedita explicabo ea iusto
+                assumenda autem reiciendis. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Obcaecati impedit repellendus
+                consequatur explicabo hic quam, facilis tempora blanditiis velit
+                voluptate laboriosam. Deserunt inventore commodi repellat quia
+                quae soluta rem perspiciatis!
+              </p>
+            </div>
+          </div>
+          <div class="other">
+            <div>
+              <a
+                href="https://angular-ecommerce-sand.vercel.app/home"
+                target="_blank"
+                onmouseover="currentProject('ecommerce')"
+                onmouseleave="currentProject('ambient')"
+              >
+                <i class="fa fa-shopping-cart"></i> E-commerce
+              </a>
+              <a
+                href="https://next-login-lime.vercel.app/login"
+                target="_blank"
+                onmouseover="currentProject('textem')"
+                onmouseleave="currentProject('ambient')"
+              >
+                <i class="fa fa-message"></i> Textem
+              </a>
+              <a
+                href="https://music-clone-lukas.vercel.app/"
+                target="_blank"
+                onmouseover="currentProject('musicapp')"
+                onmouseleave="currentProject('ambient')"
+              >
+                <i class="fa fa-music"></i> Music-app
+              </a>
+              <a
+                href="https://sociallyawkward.vercel.app/home"
+                target="_blank"
+                onmouseover="currentProject('awkward')"
+                onmouseleave="currentProject('ambient')"
+              >
+                <i class="fa fa-people-group"></i> Awkward
+              </a>
+            </div>
+            <div id="info-parent">
+              <article id="ambient">
+                <img src="https://pngimg.com/d/github_PNG15.png" />
+                <h3>Checkout my repository</h3>
+                <hr />
+                <p>
+                  On my github repository there are all of my projects
+                  implementation and code, along with descriptions of
+                  technologies used to build them.
+                </p>
+                <a href="https://github.com/LukassF" target="_blank">Visit</a>
+              </article>
+              <article id="ecommerce">
+                <h3>E-COMMERCE</h3>
+                <hr />
+                <p>
+                  The E-commerce website, is, as could be inferred, an app
+                  mimicking the appearance,functionality and purpouse of a
+                  typical e-commerce website.The functionalities range from
+                  browsing a wide array of products, selecting ones the customer
+                  desires to purchase, and proceeding with the checkout.
+                </p>
+                <ul>
+                  <li><i class="fab fa-node"></i></li>
+                  <li><i class="fab fa-angular"></i></li>
+                  <li>
+                    <img
+                      src="https://cdn.icon-icons.com/icons2/2148/PNG/512/tailwind_icon_131947.png"
+                      alt="tailwind-icon"
+                    />
+                  </li>
+                </ul>
+              </article>
+              <article id="textem">
+                <h3>TEXT&apos;EM</h3>
+                <hr />
+                <p>
+                  Chat with friends and strangers alike, is the motto of the
+                  Text'em chat app. It offers a variety of features but the main
+                  and the most important one is the ability to take part in
+                  realtime chats with other logged in users. Due to the use of
+                  websockets the connection is seamless and navigation
+                  intuitive!
+                </p>
+                <ul>
+                  <li>
+                    <img
+                      src="https://static-00.iconduck.com/assets.00/next-js-icon-2048x2048-5dqjgeku.png"
+                      alt="next js"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEUAAAD///9ra2uMjIwdHR10dHR9fX1gYGDLy8tvb29ERETq6ur5+fnx8fFXV1ecnJylpaW5ubk9PT3U1NSUlJSysrLb29vn5+c2NjZnZ2eGhoYTExO8vLzOzs4YGBhOTk4rKyskJCSrq6uYmJgvLy9ISEg4ODjjvoUeAAAFCUlEQVR4nO2caUPiMBCGw1VEWooolyCX6P//iQvL6gLO5GhmUth9n680bR7S5pzEGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwfzObZ69HsuZgtFB/2n4w6J6Y9zpWekeaB+ZHut8Mztm4ntcbTxsX5NNlttU0HDdEebU+LHtmkk3f2/+AYXuX21IuP5UMl7KGLfZBO2faB52XNZFhz1p+X7xoGD7IGjJ59P0fnxUM3xIYbvve6YvZrRu+E48YBd1hLW3I1d8VKWMFG43BvRlug+8xkjUUrmmGPx7g/w1+kcv25LQNnyrcZHLLhrur23cr3WV8R4ZFtds078bwtep97sYwvJr5w9OdGM6r3qYQbPeFDce+N8+nkwnbGxcsQfEW/zJv3FVvvVOTt5hTXfK8JyloVm0e80Jlr7OwJLlorDu0X//j/KLh9c8Pon4OWlQG/WtyurW/HiENrv5AWQUHkYZTKnnx47LZ2feYtABNtCFZkxDJ/44+0hagiTVs+xXhgez021Iu577EGe6p1HSX89isFF2xfPsTZ0gOfZmpqoIYd6UgzvCRSs18aZtHqTyHoWCYaeY3HIW3VGVKtDoKNU3qBs9BnOGWSi058hMgznBBGtZTZ3Jo9GkaNdWaNJGG9Ag/V8xwMJGGzAA4/3AnTUWkYUkbknP/NRFpOOMMG0XyQQRDpCE9QDzRvw3HWENyFuTbkV8RT0esITsVdSIv9aNpHEQbOiM9lsJLaaFEGzoK8chEdu4wkHhDtsE4o84PMt7Qb+Uir21MJWBIDoMJx5rKUcDQ3mLU7ihh6B91VdRQ54gYBiz+TJK3HTKGIVFJoiv4HggZhoQHSq6NeiBl+HMJzULSaQ4xw6D1bo0ARQ45Q7MI+BiLdB1yQUPfINqTompo+zmihiFfo3BoG4+woWl7R7lN5SSsSBsas/d1TLRaKm9ozNZz/0OaRSoNQ2NWpVedIyHgRMfwwKtlFu6LJB04NcNDF8DdPqZoMhQNjfl09VZTFKKq4XEnlNUwxRKOsqFxzFQlGBHrG1qnVBO0iSkMzZaNQk3wmiYxNKbJKeovFycyNHumC2DfkSpBKkPTphX124tkhsyLqj/aT2dITzn2VR51TkJDuhBVHnWOlOHWnWZ114aHjsvGeRFZ14RnORARw85xd5d7wx25B6xatgOQWF2bnFI553nv1XDpnYx61O0bvp+nsy9IDKhH3bph92qF26pIDjH05xRjDEc/23DLdgM6QOym+zTkvCgf6UUHNFzvuZWnsmHGDBa4LDNTb/qxb1UNyXS/mVInJsy5+VP92bbKZcgaHr6t64KZT9i/Q8PpksqG9j3cby/r06FJi1E2tuxnT7AaXL2mYcvli7w44Lhmr+0XY0juzAvkTVvPRLUWlc8a+Iv0MS4UMS1+9Db4JAELUb22ikdifJPgK4w05CP1vaDOY5Inruf9ESMoe0YNS+ToiR4ReUFuiFYgdnz46R9Cc0m+UXO6JHqMv/JYzaYE5U9tYxCYp6ly8mT/vqK+usFvqujZLQ5k5ktDQi8Pb6jOnDqD0IzwNuBIs8RBwmLrFr6BUMuNtIIDyZWZlrNazYd6R+1ykHslKkdIjIYWyeKpjoM/zGNGENVWdXbE+VfFQ0vrEOF6mK2bL2U53O2GZVm2mutV3RkCAAAAAAAAAABAen4BuoQ+JH/rlgIAAAAASUVORK5CYII="
+                      alt="ts"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="https://cdn.icon-icons.com/icons2/2148/PNG/512/tailwind_icon_131947.png"
+                      alt="tailwind-icon"
+                    />
+                  </li>
+                </ul>
+              </article>
+              <article id="musicapp">
+                <h3>MUSIC APP</h3>
+                <hr />
+                <p>
+                  Music-App is a Spotify Clone music app for streaming music and
+                  manipulating music data. It has all of the features typical
+                  for spotify, such as playing songs, creating playlists and
+                  listening to favourite artists or their albums. The free
+                  version doesn't include streaming music so make sure you have
+                  a premium Spotify account.
+                </p>
+                <ul>
+                  <li><i class="fa-brands fa-vuejs"></i></li>
+                  <li><i class="fa-brands fa-sass"></i></li>
+                  <li>
+                    <img
+                      src="https://seeklogo.com/images/S/spotify-logo-7839B39C1B-seeklogo.com.png?v=637903118240000000"
+                      alt="spotify icon"
+                    />
+                  </li>
+                </ul>
+              </article>
+              <article id="awkward">
+                <h3>SOCIALLY AWKWARD</h3>
+                <hr />
+                <p>
+                  Socially Awkward is a social media type app, meant for
+                  socializing with other users by posting images or interacting
+                  with others' posts in various ways such as liking them or
+                  commenting. The frontend side of the project is built with
+                  Angular, and the backend has been created with vanilla PHP.
+                </p>
+                <ul>
+                  <li><i class="fab fa-php"></i></li>
+                  <li><i class="fab fa-angular"></i></li>
+                  <li>
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEUAAAD///9ra2uMjIwdHR10dHR9fX1gYGDLy8tvb29ERETq6ur5+fnx8fFXV1ecnJylpaW5ubk9PT3U1NSUlJSysrLb29vn5+c2NjZnZ2eGhoYTExO8vLzOzs4YGBhOTk4rKyskJCSrq6uYmJgvLy9ISEg4ODjjvoUeAAAFCUlEQVR4nO2caUPiMBCGw1VEWooolyCX6P//iQvL6gLO5GhmUth9n680bR7S5pzEGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwfzObZ69HsuZgtFB/2n4w6J6Y9zpWekeaB+ZHut8Mztm4ntcbTxsX5NNlttU0HDdEebU+LHtmkk3f2/+AYXuX21IuP5UMl7KGLfZBO2faB52XNZFhz1p+X7xoGD7IGjJ59P0fnxUM3xIYbvve6YvZrRu+E48YBd1hLW3I1d8VKWMFG43BvRlug+8xkjUUrmmGPx7g/w1+kcv25LQNnyrcZHLLhrur23cr3WV8R4ZFtds078bwtep97sYwvJr5w9OdGM6r3qYQbPeFDce+N8+nkwnbGxcsQfEW/zJv3FVvvVOTt5hTXfK8JyloVm0e80Jlr7OwJLlorDu0X//j/KLh9c8Pon4OWlQG/WtyurW/HiENrv5AWQUHkYZTKnnx47LZ2feYtABNtCFZkxDJ/44+0hagiTVs+xXhgez021Iu577EGe6p1HSX89isFF2xfPsTZ0gOfZmpqoIYd6UgzvCRSs18aZtHqTyHoWCYaeY3HIW3VGVKtDoKNU3qBs9BnOGWSi058hMgznBBGtZTZ3Jo9GkaNdWaNJGG9Ag/V8xwMJGGzAA4/3AnTUWkYUkbknP/NRFpOOMMG0XyQQRDpCE9QDzRvw3HWENyFuTbkV8RT0esITsVdSIv9aNpHEQbOiM9lsJLaaFEGzoK8chEdu4wkHhDtsE4o84PMt7Qb+Uir21MJWBIDoMJx5rKUcDQ3mLU7ihh6B91VdRQ54gYBiz+TJK3HTKGIVFJoiv4HggZhoQHSq6NeiBl+HMJzULSaQ4xw6D1bo0ARQ45Q7MI+BiLdB1yQUPfINqTompo+zmihiFfo3BoG4+woWl7R7lN5SSsSBsas/d1TLRaKm9ozNZz/0OaRSoNQ2NWpVedIyHgRMfwwKtlFu6LJB04NcNDF8DdPqZoMhQNjfl09VZTFKKq4XEnlNUwxRKOsqFxzFQlGBHrG1qnVBO0iSkMzZaNQk3wmiYxNKbJKeovFycyNHumC2DfkSpBKkPTphX124tkhsyLqj/aT2dITzn2VR51TkJDuhBVHnWOlOHWnWZ114aHjsvGeRFZ14RnORARw85xd5d7wx25B6xatgOQWF2bnFI553nv1XDpnYx61O0bvp+nsy9IDKhH3bph92qF26pIDjH05xRjDEc/23DLdgM6QOym+zTkvCgf6UUHNFzvuZWnsmHGDBa4LDNTb/qxb1UNyXS/mVInJsy5+VP92bbKZcgaHr6t64KZT9i/Q8PpksqG9j3cby/r06FJi1E2tuxnT7AaXL2mYcvli7w44Lhmr+0XY0juzAvkTVvPRLUWlc8a+Iv0MS4UMS1+9Db4JAELUb22ikdifJPgK4w05CP1vaDOY5Inruf9ESMoe0YNS+ToiR4ReUFuiFYgdnz46R9Cc0m+UXO6JHqMv/JYzaYE5U9tYxCYp6ly8mT/vqK+usFvqujZLQ5k5ktDQi8Pb6jOnDqD0IzwNuBIs8RBwmLrFr6BUMuNtIIDyZWZlrNazYd6R+1ykHslKkdIjIYWyeKpjoM/zGNGENVWdXbE+VfFQ0vrEOF6mK2bL2U53O2GZVm2mutV3RkCAAAAAAAAAABAen4BuoQ+JH/rlgIAAAAASUVORK5CYII="
+                      alt="ts"
+                    />
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
       </main>
+
+      <main class="contact"></main>
     </section>
+
     <script src="main.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 

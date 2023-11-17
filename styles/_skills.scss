@@ -73,7 +73,7 @@
           padding: 0px 30px;
         }
         border: solid rgba(121, 148, 179, 0.3) 1.5px;
-        background-color: rgba(121, 148, 179, 0.1);
+        background-color: rgba(121, 148, 179, 0.05);
       }
 
       article {
@@ -93,12 +93,13 @@
             display: grid;
             place-content: center;
             aspect-ratio: 1/1;
-            // background-color: #29272b;
-
-            // border-bottom: solid rgb(95, 94, 94) 2px;
-            // border-right: solid rgb(95, 94, 94) 2px;
             font-size: 1.5em;
             color: rgb(159, 159, 159);
+
+            img {
+              width: 22px;
+              filter: invert(100%) opacity(60%);
+            }
           }
         }
       }
