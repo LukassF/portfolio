@@ -1,7 +1,202 @@
 @use "./utils" as *;
 
-.contact {
-  min-height: 100vh;
+#contact {
+  //   min-height: 100vh;
   background-color: #2f2d32;
   padding: 30px;
+  padding-bottom: 10px;
+
+  @media screen and (max-width: 900px) {
+    padding: 10px;
+    padding-bottom: 8px;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 7px;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 6fr 6fr 1fr;
+  }
+  grid-template-rows: 6fr 1fr;
+
+  .cnt__article1 {
+    // background-color: red;
+    padding: 20px;
+
+    @media screen and (max-width: 700px) {
+      padding: 10px;
+    }
+    form {
+      height: 100%;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 4fr 1fr;
+      gap: 10px;
+
+      input,
+      textarea {
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: rgba(121, 148, 179, 0.05);
+        color: $main-accent;
+        // border: solid $main-accent 1px;
+        border: none;
+        outline: none;
+      }
+
+      textarea {
+        font-size: 1.1em;
+        resize: none;
+      }
+
+      button {
+        border-radius: 5px;
+        background-color: rgb(83, 82, 82);
+        cursor: pointer;
+        border: none;
+        color: rgb(194, 189, 189);
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: rgb(100, 99, 99);
+        }
+
+        &:disabled {
+          opacity: 0.4;
+          cursor: default;
+
+          &:hover {
+            background-color: rgb(83, 82, 82);
+          }
+        }
+      }
+    }
+  }
+
+  .cnt__article2 {
+    @media screen and (max-width: 900px) {
+      grid-row-start: 1;
+    }
+    // border: solid rgb(90, 88, 88) 1px;
+    border-bottom: none;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    gap: 10px;
+
+    @media screen and (max-width: 700px) {
+      grid-template-rows: 1fr 2fr;
+    }
+
+    header {
+      ul {
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        list-style: none;
+
+        @media screen and (max-width: 700px) {
+          grid-template-columns: 1fr 1fr;
+          gap: 30px;
+        }
+
+        @media screen and (max-width: 450px) {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        li {
+          @include flex(column, center, flex-start);
+          gap: 7px;
+
+          @media screen and (max-width: 1200px) {
+            font-size: 0.8em;
+          }
+
+          &:first-child {
+            border: none;
+            align-items: flex-start;
+          }
+
+          &:nth-child(2) {
+            align-items: center;
+            border-left: solid rgb(116, 114, 114) 1px;
+            border-right: solid rgb(116, 114, 114) 1px;
+
+            @media screen and (max-width: 1100px) {
+              border: none;
+            }
+            @media screen and (max-width: 700px) {
+              align-items: flex-start;
+            }
+          }
+
+          &:last-child {
+            align-items: flex-end;
+            @media screen and (max-width: 700px) {
+              align-items: flex-start;
+            }
+          }
+
+          span {
+            &:first-of-type {
+              @include flex(row, center, center);
+              gap: 10px;
+              color: rgb(180, 175, 175);
+              i {
+                font-size: 0.6em;
+                color: rgb(73, 73, 73);
+              }
+            }
+
+            &:last-of-type {
+              color: rgb(151, 148, 148);
+              font-weight: 100;
+              font-size: 0.9em;
+            }
+          }
+
+          div {
+            width: 20%;
+            height: 1.5px;
+            border-radius: 500px;
+            background-color: rgb(135, 133, 133);
+          }
+        }
+      }
+    }
+
+    iframe {
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      filter: invert(100%) opacity(40%);
+    }
+  }
+
+  .footer {
+    padding: 27px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 0.9em;
+
+    display: grid;
+    place-content: center;
+    color: rgb(141, 138, 138);
+    border-top: solid rgb(118, 117, 117) 1px;
+
+    @media screen and (max-width: 900px) {
+      grid-column-end: auto;
+      grid-column-start: auto;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 0.7em;
+    }
+  }
 }

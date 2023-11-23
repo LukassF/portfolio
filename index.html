@@ -17,9 +17,33 @@
     />
 
     <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"
+      defer
+    ></script>
+
+    <script
       src="https://kit.fontawesome.com/f83777b1f5.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("qWcpIJq0ZIk5s3goi");
+      })();
+    </script>
     <title>Virtue</title>
   </head>
   <body>
@@ -35,10 +59,16 @@
       <main id="about">
         <nav id="navbar">
           <ul>
-            <li>AB<span>OUT</span></li>
-            <li>SKI<span>LLS</span></li>
-            <li>PROJ<span>ECTS</span></li>
-            <li>CON<span>TACT</span></li>
+            <li onclick="goTo('about')" class="nav-link">AB<span>OUT</span></li>
+            <li onclick="goTo('skills')" class="nav-link">
+              SKI<span>LLS</span>
+            </li>
+            <li onclick="goTo('projects')" class="nav-link">
+              PROJ<span>ECTS</span>
+            </li>
+            <li onclick="goTo('contact')" class="nav-link">
+              CON<span>TACT</span>
+            </li>
           </ul>
         </nav>
         <section id="section-1-sub">
@@ -50,17 +80,16 @@
             </div>
           </article>
           <article class="s1__article2">
-            <h3>I'm Łukasz</h3>
-            <h1>DEVELOPER & <span>designer</span></h1>
-            <div></div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-              aperiam voluptates mollitia nobis, sint sed minus ipsam. Iure
-              facere magnam explicabo, sunt magni, est repellat eos recusandae
-              repellendus eum minus. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit
+            <h3 class="about-el">I'm Łukasz</h3>
+            <h1 class="about-el">DEVELOPER & <span>designer</span></h1>
+            <div class="about-el"></div>
+            <p class="about-el">
+              My name is Łukasz and I'm a self taught full-stack developer. I'm
+              from Kraków, Poland, and I'm currently studying here on an IT
+              related faculty for over a year. I consider myself a hard working
+              and no less passionate person. Keep scrolling to learn more!
             </p>
-            <ul>
+            <ul class="about-el">
               <li>
                 <a href="https://www.facebook.com/luki.flork" target="_blank"
                   ><i class="fa fa-facebook"></i
@@ -102,53 +131,53 @@
               <h1>CREATIVITY</h1>
               <span></span>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Obcaecati, doloribus ratione. Ea, molestiae officiis assumenda
-                doloremque odit voluptatum, nam vero placeat tenetur officia ab.
-                Mollitia magnam hic sunt ea eius?
+                Creativity is my driving force, an intrinsic quality that
+                propels me to explore uncharted territories of imagination. I
+                revel in the boundless realm of ideas, constantly pushing the
+                boundaries of conventional thinking.
               </p>
             </div>
             <div class="trait trait-2">
               <h1>METICULOUSNESS</h1>
               <span></span>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Obcaecati, doloribus ratione. Ea, molestiae officiis assumenda
-                doloremque odit voluptatum, nam vero placeat tenetur officia ab.
-                Mollitia magnam hic sunt ea eius?
+                Dilligence is my guiding principle in every endeavor, a trait
+                that sets me apart in a world that often rushes through details.
+                I take pride in my commitment to precision, whether it's solving
+                a complex problem, or executing a project.
               </p>
             </div>
             <div class="trait trait-3">
               <h1>PUNCTUALITY</h1>
               <span></span>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Obcaecati, doloribus ratione. Ea, molestiae officiis assumenda
-                doloremque odit voluptatum, nam vero placeat tenetur officia ab.
-                Mollitia magnam hic sunt ea eius?
+                Whether it's a meeting, a deadline, or any scheduled commitment,
+                I approach each with a sense of urgency and respect for the
+                value of time. Punctuality is not just a habit; it's a
+                demonstration of reliability and accountability.
               </p>
             </div>
             <article>
               <ul>
-                <li><i class="fab fa-js"></i></li>
-                <li><i class="fab fa-php"></i></li>
-                <li><i class="fab fa-react"></i></li>
-                <li><i class="fab fa-angular"></i></li>
-                <li><i class="fab fa-node"></i></li>
-                <li>
+                <li class="skill"><i class="fab fa-js"></i></li>
+                <li class="skill"><i class="fab fa-php"></i></li>
+                <li class="skill"><i class="fab fa-react"></i></li>
+                <li class="skill"><i class="fab fa-angular"></i></li>
+                <li class="skill"><i class="fab fa-node"></i></li>
+                <li class="skill">
                   <img
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEUAAAD///9ra2uMjIwdHR10dHR9fX1gYGDLy8tvb29ERETq6ur5+fnx8fFXV1ecnJylpaW5ubk9PT3U1NSUlJSysrLb29vn5+c2NjZnZ2eGhoYTExO8vLzOzs4YGBhOTk4rKyskJCSrq6uYmJgvLy9ISEg4ODjjvoUeAAAFCUlEQVR4nO2caUPiMBCGw1VEWooolyCX6P//iQvL6gLO5GhmUth9n680bR7S5pzEGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwfzObZ69HsuZgtFB/2n4w6J6Y9zpWekeaB+ZHut8Mztm4ntcbTxsX5NNlttU0HDdEebU+LHtmkk3f2/+AYXuX21IuP5UMl7KGLfZBO2faB52XNZFhz1p+X7xoGD7IGjJ59P0fnxUM3xIYbvve6YvZrRu+E48YBd1hLW3I1d8VKWMFG43BvRlug+8xkjUUrmmGPx7g/w1+kcv25LQNnyrcZHLLhrur23cr3WV8R4ZFtds078bwtep97sYwvJr5w9OdGM6r3qYQbPeFDce+N8+nkwnbGxcsQfEW/zJv3FVvvVOTt5hTXfK8JyloVm0e80Jlr7OwJLlorDu0X//j/KLh9c8Pon4OWlQG/WtyurW/HiENrv5AWQUHkYZTKnnx47LZ2feYtABNtCFZkxDJ/44+0hagiTVs+xXhgez021Iu577EGe6p1HSX89isFF2xfPsTZ0gOfZmpqoIYd6UgzvCRSs18aZtHqTyHoWCYaeY3HIW3VGVKtDoKNU3qBs9BnOGWSi058hMgznBBGtZTZ3Jo9GkaNdWaNJGG9Ag/V8xwMJGGzAA4/3AnTUWkYUkbknP/NRFpOOMMG0XyQQRDpCE9QDzRvw3HWENyFuTbkV8RT0esITsVdSIv9aNpHEQbOiM9lsJLaaFEGzoK8chEdu4wkHhDtsE4o84PMt7Qb+Uir21MJWBIDoMJx5rKUcDQ3mLU7ihh6B91VdRQ54gYBiz+TJK3HTKGIVFJoiv4HggZhoQHSq6NeiBl+HMJzULSaQ4xw6D1bo0ARQ45Q7MI+BiLdB1yQUPfINqTompo+zmihiFfo3BoG4+woWl7R7lN5SSsSBsas/d1TLRaKm9ozNZz/0OaRSoNQ2NWpVedIyHgRMfwwKtlFu6LJB04NcNDF8DdPqZoMhQNjfl09VZTFKKq4XEnlNUwxRKOsqFxzFQlGBHrG1qnVBO0iSkMzZaNQk3wmiYxNKbJKeovFycyNHumC2DfkSpBKkPTphX124tkhsyLqj/aT2dITzn2VR51TkJDuhBVHnWOlOHWnWZ114aHjsvGeRFZ14RnORARw85xd5d7wx25B6xatgOQWF2bnFI553nv1XDpnYx61O0bvp+nsy9IDKhH3bph92qF26pIDjH05xRjDEc/23DLdgM6QOym+zTkvCgf6UUHNFzvuZWnsmHGDBa4LDNTb/qxb1UNyXS/mVInJsy5+VP92bbKZcgaHr6t64KZT9i/Q8PpksqG9j3cby/r06FJi1E2tuxnT7AaXL2mYcvli7w44Lhmr+0XY0juzAvkTVvPRLUWlc8a+Iv0MS4UMS1+9Db4JAELUb22ikdifJPgK4w05CP1vaDOY5Inruf9ESMoe0YNS+ToiR4ReUFuiFYgdnz46R9Cc0m+UXO6JHqMv/JYzaYE5U9tYxCYp6ly8mT/vqK+usFvqujZLQ5k5ktDQi8Pb6jOnDqD0IzwNuBIs8RBwmLrFr6BUMuNtIIDyZWZlrNazYd6R+1ykHslKkdIjIYWyeKpjoM/zGNGENVWdXbE+VfFQ0vrEOF6mK2bL2U53O2GZVm2mutV3RkCAAAAAAAAAABAen4BuoQ+JH/rlgIAAAAASUVORK5CYII="
                     alt="ts"
                   />
                 </li>
-                <li><i class="fab fa-python"></i></li>
+                <li class="skill"><i class="fab fa-python"></i></li>
               </ul>
             </article>
           </article>
         </section>
       </main>
 
-      <main class="projects">
+      <main id="projects">
         <section id="break">
           <ul>
             <li>
@@ -188,7 +217,7 @@
         </section>
 
         <section class="projects-content">
-          <div class="project">
+          <div class="project pr-el">
             <img
               src="https://www.pngkey.com/png/full/249-2492376_selecting-the-right-partner-to-build-your-website.png"
               alt="spotify"
@@ -197,18 +226,17 @@
               <h1>VARIOUS STATIC WEBSITES AND CLONES</h1>
               <hr />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                optio rerum veniam deleniti quod qui inventore minima dolorem
-                sit atque consectetur, saepe facilis expedita explicabo ea iusto
-                assumenda autem reiciendis. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Obcaecati impedit repellendus
-                consequatur explicabo hic quam, facilis tempora blanditiis velit
-                voluptate laboriosam. Deserunt inventore commodi repellat quia
-                quae soluta rem perspiciatis!
+                Crafting static websites is an art of simplicity and precision.
+                Each line of code serves a purpose, contributing to a seamless
+                and efficient user experience. From clean HTML structures to
+                responsive CSS styling, my static websites are a testament to
+                the beauty of simplicity in the digital realm, where each
+                element is thoughtfully placed to convey information seamlessly
+                and aesthetically.
               </p>
             </div>
           </div>
-          <div class="project">
+          <div class="project pr-el">
             <img
               src="https://res.cloudinary.com/smartsupp/image/upload/w_1024,q_auto,f_auto,dpr_auto/v1652860147/upload/Genuinely_connect_with_visitors_and_boost_online_sales_2x_hqpve6.png"
               alt="spotify"
@@ -217,18 +245,17 @@
               <h1>DYNAMIC AND FUNCTIONAL FULLSTACK APPS</h1>
               <hr />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                optio rerum veniam deleniti quod qui inventore minima dolorem
-                sit atque consectetur, saepe facilis expedita explicabo ea iusto
-                assumenda autem reiciendis. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Obcaecati impedit repellendus
-                consequatur explicabo hic quam, facilis tempora blanditiis velit
-                voluptate laboriosam. Deserunt inventore commodi repellat quia
-                quae soluta rem perspiciatis!
+                Crafting dynamic full-stack apps is a symphony of innovation and
+                functionality. I thrive on the dynamic interplay between
+                frontend and backend technologies, orchestrating a seamless user
+                experience. From the engaging user interface designed with HTML,
+                CSS, and JavaScript to the robust backend powered by server-side
+                languages and databases, every line of code contributes to a
+                rich, interactive ecosystem.
               </p>
             </div>
           </div>
-          <div class="project">
+          <div class="project pr-el">
             <img
               src="https://www.pngmart.com/files/11/Online-Portal-E-Commerce-PNG-Image.png"
               alt="spotify"
@@ -237,18 +264,15 @@
               <h1>ECOMMERCE AND SUPPORTING PAYMENTS</h1>
               <hr />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                optio rerum veniam deleniti quod qui inventore minima dolorem
-                sit atque consectetur, saepe facilis expedita explicabo ea iusto
-                assumenda autem reiciendis. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Obcaecati impedit repellendus
-                consequatur explicabo hic quam, facilis tempora blanditiis velit
-                voluptate laboriosam. Deserunt inventore commodi repellat quia
-                quae soluta rem perspiciatis!
+                Crafting ecommerce websites with seamless payment integration is
+                a meticulous dance of user-centric design and secure, efficient
+                functionality. I approach the development of ecommerce platforms
+                with a dual focus: creating an engaging, intuitive shopping
+                experience and implementing robust payment gateways.
               </p>
             </div>
           </div>
-          <div class="other">
+          <div class="other pr-el">
             <div>
               <a
                 href="https://angular-ecommerce-sand.vercel.app/home"
@@ -396,8 +420,134 @@
         </section>
       </main>
 
-      <main class="contact"></main>
+      <main id="contact">
+        <article class="cnt__article1">
+          <form onsubmit="sendEmail(event)" autocomplete="off">
+            <input
+              type="text"
+              placeholder="Your full name"
+              oninput="fillEmail('name', event)"
+            />
+            <input
+              type="email"
+              placeholder="Your email"
+              oninput="fillEmail('email', event)"
+            />
+            <input
+              type="text"
+              placeholder="Subject"
+              oninput="fillEmail('subject', event)"
+            />
+            <textarea
+              placeholder="Message"
+              id="message-area"
+              oninput="fillEmail('message', event)"
+            ></textarea>
+            <button class="send-button" disabled>Send</button>
+          </form>
+        </article>
+        <article class="cnt__article2">
+          <header>
+            <!-- <h1>Some technical info...</h1> -->
+
+            <ul>
+              <li>
+                <span>Phone <i class="fa fa-phone"></i></span>
+                <div></div>
+                <span>+48 798 767 199</span>
+              </li>
+              <li>
+                <span>Email <i class="fa fa-envelope"></i></span>
+                <div></div>
+                <span>szkulkerolf@gmail.com</span>
+              </li>
+              <li>
+                <span>Location <i class="fa-solid fa-location-dot"></i></span>
+                <div></div>
+                <span>Poland, Kraków</span>
+              </li>
+            </ul>
+          </header>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1613.6865067367216!2d19.961859802843044!3d50.05693512372302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b3bdfed0979%3A0x8ce9e274fd840e5d!2sAleja%20Pokoju%201A%2F15%2C%2031-548%20Krak%C3%B3w!5e0!3m2!1sen!2spl!4v1691064618402!5m2!1sen!2spl"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </article>
+
+        <div class="footer">2023 Łukasz Florek szkulkerolf@gmail.com</div>
+      </main>
     </section>
+
+    <script type="application/javascript">
+      let name = "",
+        email = "",
+        subject = "",
+        message = "",
+        acc = false;
+
+      const inputs = document.getElementsByTagName("input");
+      const textarea = document.querySelector("#message-area");
+      const sendButton = document.querySelector(".send-button");
+
+      const fillEmail = (arg, e) => {
+        acc = true;
+        for (let i = 0; i < inputs.length; i++) {
+          if (inputs[i].value === "" || textarea.value === "") acc = false;
+        }
+
+        if (acc) {
+          sendButton.disabled = false;
+        } else {
+          sendButton.disabled = true;
+        }
+
+        switch (arg) {
+          case "name":
+            name = e.target.value;
+            break;
+          case "email":
+            email = e.target.value;
+            break;
+          case "subject":
+            subject = e.target.value;
+            break;
+          case "message":
+            message = e.target.value;
+            break;
+          default:
+            return;
+        }
+      };
+
+      const sendEmail = (e) => {
+        e.preventDefault();
+        var params = {
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
+        };
+        const serviceID = "service_jcox09c";
+        const templateID = "template_ja7vq5m";
+
+        emailjs
+          .send(serviceID, templateID, params)
+          .then((res) => {
+            Swal.fire("Success!", "Email has been sent!", "success");
+          })
+          .catch((err) => {
+            Swal.fire(
+              "Something went wrong!",
+              "Email has not been sent, try again!",
+              "error"
+            );
+            console.log(err);
+          });
+      };
+    </script>
 
     <script src="main.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

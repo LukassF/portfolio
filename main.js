@@ -19,6 +19,8 @@ particles_cont.onmouseleave = () => {
 };
 
 function initParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   for (let i = 0; i < 600; i++) {
     const p_object = {
       radius: Math.random() * 5 + 2,
@@ -127,9 +129,24 @@ function clamp(number, min, max) {
 initParticles();
 loop();
 
+const config = { attributes: true };
+
+const callback = (mutations, observer) => {
+  for (const mutation of mutations) {
+    if (mutation.type === "attributes") {
+      console.log(`The ${mutation.attributeName} attribute was modified.`);
+      // initParticles();
+    }
+  }
+};
+
+const observer = new MutationObserver(callback);
+observer.observe(particles_cont, config);
+
 // --------------------------------- gsap animations ------------------------------------ //
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(scrollTo);
 
 gsap.to(particles_cont, {
   scrollTrigger: {
@@ -151,6 +168,70 @@ gsap.from(".greetings-el", {
   stagger: 0.2,
   opacity: 0,
 });
+
+gsap.from("#image-cont-outer", {
+  scrollTrigger: {
+    trigger: "#about",
+    // markers: true,
+    start: "top center",
+  },
+  duration: 0.6,
+  stagger: 0.2,
+  rotate: 30,
+  scale: 0.7,
+  opacity: 0,
+});
+
+gsap.from(".about-el", {
+  scrollTrigger: {
+    trigger: "#about",
+    // markers: true,
+    start: "top center",
+  },
+  duration: 0.4,
+  stagger: 0.12,
+  x: 300,
+  opacity: 0,
+  ease: "back",
+});
+
+gsap.from(".trait", {
+  scrollTrigger: {
+    trigger: "#skills",
+    // markers: true,
+    start: "top 80%",
+  },
+  duration: 0.4,
+  stagger: 0.12,
+  y: -100,
+  opacity: 0,
+});
+
+gsap.from(".skill", {
+  scrollTrigger: {
+    trigger: "#skills",
+    start: "top center",
+  },
+  duration: 0.4,
+  stagger: 0.12,
+  y: 40,
+  opacity: 0,
+});
+
+gsap.from(".pr-el", {
+  scrollTrigger: {
+    trigger: "#projects",
+    start: "top center",
+  },
+  duration: 0.4,
+  stagger: 0.12,
+  scale: 0.6,
+  opacity: 0,
+});
+
+function goTo(ctx) {
+  gsap.to(window, { duration: 0.3, scrollTo: `#${ctx}` });
+}
 
 // ---------------------- Functions ------------------------------------
 
