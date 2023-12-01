@@ -46,11 +46,20 @@
         // border: solid $main-accent 1px;
         border: none;
         outline: none;
+
+        @media screen and (max-width: 900px) {
+          font-size: 0.8em;
+        }
       }
 
       textarea {
+        padding-top: 13px;
         font-size: 1.1em;
         resize: none;
+
+        @media screen and (max-width: 900px) {
+          font-size: 0.9em;
+        }
       }
 
       button {

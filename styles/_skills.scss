@@ -75,7 +75,11 @@
         }
 
         h1 {
+          font-size: 1.1em;
           color: rgb(208, 208, 208);
+          @media screen and (max-width: 700px) {
+            font-size: 0.9em;
+          }
         }
         span {
           width: 10%;
